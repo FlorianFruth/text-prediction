@@ -39,4 +39,4 @@ Summary
 In this pitch, we presented the Text Prediction ShinyApp, which takes a phrase as input and returns the most likely next word, based on n-gram models together with a markovian approach.  
 
 The code for this presentation file can be found here:
-<https://github.com/FlorianFruth/data-products/blob/master/text-prediction_pitch-presentation.Rpres>
+<https://github.com/FlorianFruth/text-prediction/blob/master/pitch_presentation_class10.Rpres>
