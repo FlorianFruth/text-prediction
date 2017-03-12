@@ -7,13 +7,13 @@ autosize: true
 Introduction
 ========================================================
 
-Today cell phones and also computers are expected to ease their users life by making suggestions for the next text entry.Moes specifically, based on the previous phrase, the next word shall be suggested based on intelligent and fast algorithms. This is already a prominent feature in the google search and when typing messages in smart phones. 
+Today cell phones and also computers use previously written phrases to suggest the next word a use might enter, based on intelligent and fast algorithms. This is already a prominent feature in the google search and when typing messages in smart phones. 
 
-Here, we describe an app that does exactly that: It takes a phrase as input and returns the next most likely word. The app was built for the Coursera Capstone project of the Data Science Specialization and can be found here:
+Here, we describe an app that does exactly that: It takes a phrase as input and returns the next most likely word. 
+The app uses data from the provided data sources (twitter, news, and blogs). Due to the size of the data, we sampled 5% of it to reduce memory issues and make it run fast but also have a large enough data basis in order retain a strong predition accuracy.
 
-<https://dfdf.shinyapps.io/Text_Prediction_App/>. 
+The app can be found here: <https://dfdf.shinyapps.io/Text_Prediction_App/>. 
 
-The app uses data from the provided data sources (twitter, news, and blogs). Due to the size of the data, we sampled 5% of it to reduce memory issues and make it run fast but also have a large enough data basis in order retain a strong predition accuracy. The model returns the most likely next word in real-time-response.
 
 Approach
 ========================================================
@@ -28,7 +28,7 @@ In order to build a strong prediction algorithm, we have previously written a pr
 Algorithm description
 ========================================================
 
-For our prediction algorithm, we check which of the last two words of the phrase match the first two words of our previously calculated 3-gram list (if there is no match, we use the 2-grams and compare the last word of the input with the first of the 2-grams). 
+For our prediction algorithm, we check which of the last two words of the phrase match the first two words of our previously calculated 3-grams (if there is no match, the last word of 2-grams are compared with the last word of the input). 
 
 This gives us a list of 3-grams, where the two first words correspond to the input and the last word corresponds to the next possible word. Now, we randomly choose an item of that list, where the probability of each row corresponds to the frequency with which the phrase occurs. After cutting away the input words, this gives us the predicted next word. 
 
